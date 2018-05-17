@@ -1,0 +1,50 @@
+body {
+    background-image: url(topography.png);
+    background-repeat: repeat;
+    margin: 0px
+}
+
+#nav {
+     background-color: #333333;
+     display: block;
+     overflow: hidden
+}
+
+#text {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 3% 10% 0% 10%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px
+}
+.KP {
+    font-size: 30px;
+    font: bold
+}
+
+#nav_menu, .menuitem {
+    color: #ff0099;
+    padding: 0% 5% 0% 0%;
+    text-align: right;
+    line-height: 310%;
+}
+
+#logo {
+    float: left;
+    margin: 0px;
+    max-width: 50px;
+    padding: 0% 0% 0% 10%;
+}
+
+h3 {
+    color: #ff0099
+}
+
+.dashes {
+    text-align: center
+}
+
+.techwiki {
+    text-align: center;
+    font-size: 40px
+}
