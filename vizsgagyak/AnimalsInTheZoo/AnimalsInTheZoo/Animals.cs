@@ -12,15 +12,14 @@ namespace AnimalsInTheZoo
         public string Name { get => name; set => name = value; }
         public int Age { get => age; set => age = value; }
 
-        public void Greet()
+        public void GetName()
         {
-
+            Console.WriteLine(Name);
         }
 
-        public void WantChlid()
-        {
+        public abstract string WantChlid();
 
-        }
+             
 
 
     }

@@ -4,7 +4,16 @@ using System.Text;
 
 namespace AnimalsInTheZoo
 {
-    class Mammals
+    class Mammals : Animals
     {
+        public Mammals(string name)
+        {
+            this.Name = name;
+        }
+
+        public override string WantChlid()
+        {
+            return "NEMTOJASD";
+        }
     }
 }
