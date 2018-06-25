@@ -7,8 +7,15 @@ namespace FirstCoreApp.Models
 {
     public class Greeting
     {
-        private long Id;
-        private string Content;
+        public Greeting(string name)
+        {
+            Id = 1;
+            Content = "Hello " + name;
+        }
 
+        public long Id { get; set; }
+        public string Content { get; set; }
     }
+
+    
 }
