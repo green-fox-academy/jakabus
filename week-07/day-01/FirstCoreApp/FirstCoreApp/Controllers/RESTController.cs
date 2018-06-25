@@ -9,18 +9,25 @@ namespace FirstCoreApp.Controllers
 {
     [Route("api")]
     public class RESTController : Controller
-    {   
+    {
+        static int apiCallCounter = 0;
+
         [Route("api")]
         public IActionResult Index()
         {
             return View();
         }
 
+        
         [Route("greeting")]
         public IActionResult Greeting(string name)
         {
-            Greeting greeting = new Greeting(name);
-
+            apiCallCounter++;
+            Greeting greeting = new Greeting()
+            {
+                Id = apiCallCounter,
+                Content = "Hello " + name 
+            };
             return new JsonResult(greeting);
         }
     }
