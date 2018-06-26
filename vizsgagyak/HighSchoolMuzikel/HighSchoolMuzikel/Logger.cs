@@ -13,14 +13,14 @@ namespace HighSchoolMuzikel
         {
             try
             {
-                List<string> lineToAppend = new List<string>() 
-                { line };
+                List<string> lineToAppend = new List<string>();
+                lineToAppend.Add(line);
+                
                 File.AppendAllLines(filename,lineToAppend);
             }
-            catch (Exception)
+            catch (FileLoadException)
             {
-
-                throw;
+                Console.WriteLine("bibi");
             }
         }
     }

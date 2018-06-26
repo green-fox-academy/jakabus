@@ -6,7 +6,11 @@ namespace HighSchoolMuzikel
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Logger.LogLine("works fine");
+
+
+
+            Console.ReadLine();
         }
     }
 }
