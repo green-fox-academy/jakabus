@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Counter.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,15 +8,22 @@ namespace Counter.Services
 {
     public class CounterService : ICounter
     {
-        private int countOfClicks = 0;
+        
+        private Numbercs storedValue;
+
+        public CounterService()
+        {
+            storedValue = new Numbercs() { MyNumber = 0 };
+        }
+
         public int Getnumber()
         {
-            return countOfClicks;
+            return storedValue.MyNumber;
         }
 
         public void Increase()
         {
-            countOfClicks++;
+            storedValue.MyNumber++;
         }
     }
 }

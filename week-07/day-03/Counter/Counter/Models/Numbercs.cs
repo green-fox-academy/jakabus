@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Counter.Services
+namespace Counter.Models
 {
-    public interface ICounter
+    public class Numbercs
     {
-        int Getnumber();
-
-        void Increase();
+        public int MyNumber { get; set; }
     }
 }
