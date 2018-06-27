@@ -30,8 +30,9 @@ namespace Zoo
             mandy
             };
 
-            kate.SetAnimalsToLookAfter(animals.getRange(0, 3));
-            mandy.SetAnimalsToLookAfter(animals.getRange(3, 4));
+            kate.SetAnimalsToLookAfter(animals.GetRange(0, 3));
+            mandy.SetAnimalsToLookAfter(animals.GetRange(3, 4));
+            
 
             for (int i = 0; i < 10; i++)
             {
