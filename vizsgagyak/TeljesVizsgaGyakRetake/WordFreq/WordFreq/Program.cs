@@ -9,16 +9,14 @@ namespace WordFreq
         static void Main(string[] args)
         {
             string filename = "input.txt";
-            foreach (string word in FileRead(filename, 2))
-            {
-                Console.WriteLine("{0}", word);
-            }
-            
+            string outputFilename = "output.txt";
+
+           
 
             Console.ReadLine();
         }
 
-        public static List<string> FileRead(string filename, int freq)
+        public static string[] FileRead(string filename, int freq)
         {
             string[] lines;
             try
@@ -65,7 +63,28 @@ namespace WordFreq
                 }
             }
 
-            return finalWords;
+            string[] finalWordsArray = new string[finalWords.Count];
+
+            for (int i = 0; i < finalWords.Count; i++)
+            {
+                finalWordsArray[i] = finalWords[i];
+            }
+
+            return finalWordsArray;
+        }
+
+        public static void FileWrite(string outputFilename, string[] words)
+        {
+            if (File.Exists(outputFilename))
+            {
+                Console.WriteLine("the file allready exists. ill rewrite it");
+                File.WriteAllLines(outputFilename, words);
+            }
+            else
+            {
+                File.WriteAllLines(outputFilename, words);
+            }
+
         }
     }
 }
