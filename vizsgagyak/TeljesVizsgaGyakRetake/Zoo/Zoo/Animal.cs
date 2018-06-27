@@ -11,34 +11,37 @@ namespace Zoo
         private string gender;
         private int fedTimes;
 
+        public string Name { get => name; set => name = value; }
+        public int Age { get => age; set => age = value; }
+        public string Gender { get => gender; set => gender = value; }
+        public int FedTimes { get => fedTimes; set => fedTimes = value; }
+
         public Animal(string name, int age, string gender)
         {
-            this.name = name;
-            this.age = age;
-            this.gender = gender;
-            this.fedTimes = 0;
+            this.Name = name;
+            this.Age = age;
+            this.Gender = gender;
+            this.FedTimes = 0;
         }
         public Animal(string name)
         {
-            this.name = name;
-            this.age = 0;
-            this.gender = "unknown";
-            this.fedTimes = 0;
+            this.Name = name;
+            this.Age = 0;
+            this.Gender = "unknown";
+            this.FedTimes = 0;
         }
 
         public void Eat()
         {
-            fedTimes++;
+            FedTimes++;
         }
 
-        public void IsHungry()
-        {
+        public abstract bool IsHungry();
 
-        }
 
         public override string ToString()
         {
-            return $"{name} is a {age} year old {gender} animal and was fed {fedTimes} times";
+            return $"{Name} is a {Age} year old {Gender} animal and was fed {FedTimes} times";
         }
     }
 }
