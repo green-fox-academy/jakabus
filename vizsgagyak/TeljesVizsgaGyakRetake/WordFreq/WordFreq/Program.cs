@@ -11,7 +11,8 @@ namespace WordFreq
             string filename = "input.txt";
             string outputFilename = "output.txt";
 
-           
+            //FileRead(filename, 2);
+            FileWrite(outputFilename, FileRead(filename, 2));
 
             Console.ReadLine();
         }
