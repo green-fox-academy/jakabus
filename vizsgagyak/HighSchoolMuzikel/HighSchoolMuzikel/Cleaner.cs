@@ -6,5 +6,6 @@ namespace HighSchoolMuzikel
 {
     class Cleaner
     {
+
     }
 }

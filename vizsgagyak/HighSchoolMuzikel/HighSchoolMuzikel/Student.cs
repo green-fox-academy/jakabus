@@ -29,5 +29,10 @@ namespace HighSchoolMuzikel
         {
             return base.ToString() + $"I go to {className}, and I am {knowledge} smart.";
         }
+        public void MessingAround()
+        {
+
+        }
+
     }
 }
