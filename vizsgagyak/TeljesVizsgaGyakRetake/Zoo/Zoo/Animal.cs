@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Zoo
 {
-    class Animal
+    abstract class Animal
     {
         private string name;
         private int age;
@@ -38,7 +38,7 @@ namespace Zoo
 
         public override string ToString()
         {
-            return base.ToString();
+            return $"{name} is a {age} year old {gender} animal and was fed {fedTimes} times";
         }
     }
 }
