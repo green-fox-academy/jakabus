@@ -20,11 +20,11 @@ namespace Poker
             Console.ReadLine();
         }
 
-        public static void CardRead(string input)
+        public static List<List<string>> CardRead(string input)
         {
+            List<List<string>> Cards = new List<List<string>>();
             List<string> Black = new List<string>();
             List<string> White = new List<string>();
-
             string[] words = input.Split(' ');
             for (int i = 1; i < 6; i++)
             {
@@ -34,12 +34,11 @@ namespace Poker
             {
                 White.Add(words[j]);
             }
-            
-            foreach (string word in White)
-            {
-                Console.WriteLine(word);
-            }
-
+            Cards.Add(Black);
+            Cards.Add(White);
+            return Cards;
         }
+
+
     }
 }

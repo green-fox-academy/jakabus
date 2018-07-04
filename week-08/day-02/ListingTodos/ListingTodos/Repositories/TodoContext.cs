@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ListingTodos.Repositories
 {
-    public class Context : DbContext
+    public class TodoContext : DbContext
     {
-        List
+        List<Todo> todosLosTodoz;
     }
 }

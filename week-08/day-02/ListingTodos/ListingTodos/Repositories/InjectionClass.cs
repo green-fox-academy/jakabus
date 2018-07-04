@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ListingTodos.Repositories
 {
-    public class InjectionClass : TodoContext
+    public class InjectionClass
     {
         private TodoContext todoContext;
 
