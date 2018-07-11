@@ -1,0 +1,45 @@
+﻿@model List<Attractions>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Index</h2>
+<p>Hello, is it me you looking for?</p>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th>Price</th>
+        <th>Longitude</th>
+        <th>Lattitude</th>
+        <th>Category</th>
+        <th>Duration</th>
+        <th>Recommended age</th>
+    </tr>
+    <tbody>
+        @foreach (var attraction in Model)
+        {
+            <tr>
+                <td>@attraction.AttrName </td>
+                <td>@attraction.City </td>
+                <td>@attraction.Price </td>
+                <td>@attraction.Longitude </td>
+                <td>@attraction.Lattitude </td>
+                <td>@attraction.Category </td>
+                <td>@attraction.Duration </td>
+                <td>@attraction.RecommendedAge </td>
+            </tr>
+        }
+    </tbody>
+    <form action="/add" method="post">
+        Name:<input type="text" name="AttrName" required />
+        City:<input type="text" name="city" required />
+        Price:<input type="number" name="price" required />
+        Longitude:<input type="number" name="Longitude" required />
+        Lattitude:<input type="number" name="Lattitude" required />
+        Category:<input type="text" name="Category" required />
+        Duration:<input type="number" name="Duration" required />
+        Recommended age:<input type="number" name="RecommendedAge" required />
+        <button type="submit">Elkuldes</button>
+    </form>
+</table>

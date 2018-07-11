@@ -1,0 +1,30 @@
+﻿@model List<BankAccount>
+@{
+    ViewData["Title"] = "Data";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table style="font-size: 30px; text-align:center;">
+    <tr style="border: 1px solid black">
+        <th style="border: 1px solid black">  Name  </th>
+        <th style="border: 1px solid black">  Balance  </th>
+        <th style="border: 1px solid black">  Animal type  </th>
+        <th style="border: 1px solid black">  Is king  </th>
+        <th style="border: 1px solid black">  Is good guy  </th>
+        <th style="border: 1px solid black">  Index  </th>
+    </tr>
+    @{int indexer = 0; }
+    @foreach (BankAccount acc in Model)
+    {
+        indexer++;
+        <tr style="border: 1px solid black; background-color: lightblue">
+            <td style="border: 1px solid black">  @acc.Name  </td>
+            <td style="border: 1px solid black">  @acc.Balance  </td>
+            <td style="border: 1px solid black">  @acc.AnimalType  </td>
+            <td style="border: 1px solid black">  @acc.IsKing  </td>
+            <td style="border: 1px solid black">  @acc.IsGoodGuy  </td>
+            <td style="border: 1px solid black">  @indexer  </td>
+        </tr>
+    }
+</tablestyle="font-size:>
+

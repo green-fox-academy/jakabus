@@ -1,0 +1,22 @@
+﻿@model Attractions
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+<p> Hey here you can edit!!!</p>
+<br />
+<form action="/update" method="post">
+    <input type="number" name="Id" value = "@Model.Id" hidden /> <br />
+    Name:<input type="text" name="AttrName" value = "@Model.AttrName" required /> <br />
+    City:<input type="text" name="city" value = "@Model.City" required /> <br />
+    Price:<input type="number" name="price" value = "@Model.Price" required /> <br />
+    Longitude:<input type="number" name="Longitude" value = "@Model.Longitude" required /> <br />
+    Lattitude:<input type="number" name="Lattitude" value = "@Model.Lattitude" required /> <br />
+    Category:<input type="text" name="Category" value = "@Model.Category" required /> <br />
+    Duration:<input type="number" name="Duration" value = "@Model.Duration"required /> <br />
+    Recommended age:<input type="number" name="RecommendedAge" value = "@Model.RecommendedAge"required /><br /> <br />
+    <button type="submit">Elkuldes</button>
+</form>
+
