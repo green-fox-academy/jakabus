@@ -42,5 +42,11 @@ namespace DBlatest.Controllers
             service.UpdateAttraction(attr);
             return RedirectToAction("home");
         }
+
+        [HttpGet("/attractions")]
+        public IActionResult Attractions()
+        {
+            return View();
+        }
     }
 }
