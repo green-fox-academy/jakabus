@@ -1,44 +1,26 @@
-﻿@model List<Post>
+﻿@model User
 @{
     ViewData["Title"] = "Home";
 }
 
-
+<html>
 <body>
+
     <div class="header">
         <h2>MyReddit</h2>
     </div>
-    <form action="/addpost" method="post">
-        <input type="submit" value="Submit">
+    <form action="/index" method="post">
+        Username:<br>
+        <input type="text" name="Username" value="peteigyismukodnifog4" required>
+        <br>
+        Password<br>
+        <input type="text" name="Password" value="" required>
+        <br><br>
+        <input type="submit" value="Login">
     </form>
 
 
+    <p>If you click the "Login" button, you prop wont login cuz idk yet nigga </p>
 
-    @foreach (var post in Model)
-    {
-        <div class="row">
-            <div class="leftcolumn">
-                <div class="card">
-                    <h2>@post.Title</h2>
-                    <h5>Title description @post.</h5>
-                    <div class="fakeimg" style="height:200px;">@post.Url</div>
-                    <p>Some text..</p>
-                    <p>Heres the some text</p>
-                </div>
-            </div>
-        </div>
-    }
-
-
-
-
-
-    <div class="rightcolumn">
-        <div class="card">
-            <h3>Popular Posts</h3>
-            <div class="fakeimg">Image</div><br>
-            <div class="fakeimg">Image</div><br>
-            <div class="fakeimg">Image</div>
-        </div>
-    </div>
 </body>
+</html>

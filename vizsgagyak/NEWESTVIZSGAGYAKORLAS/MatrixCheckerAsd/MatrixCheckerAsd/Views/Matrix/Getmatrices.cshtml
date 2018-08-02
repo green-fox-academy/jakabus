@@ -1,0 +1,24 @@
+﻿@model List<Matrix>
+@{
+    ViewData["Title"] = "Getmatrices";
+}
+
+<h2>Edit Matrices</h2>
+<h3>There matrices are square and increasing matrices!</h3> <br />
+
+@for (int i = 0; i < Model.Count; i++)
+{    
+      <form action="/deletematrice" method="post">
+           <br />
+           <textarea name="matrixAsString">@Model[i].MatrixAsString</textarea>
+           <br />
+           <input type="submit" value="Delete">
+      </form>
+
+    <br /><br />
+}
+
+
+
+
+

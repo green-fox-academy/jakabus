@@ -1,0 +1,43 @@
+﻿@model List<Post>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <div class="header">
+        <h2>MyReddit</h2>
+    </div>
+
+    <form action="/addpost" method="post">
+        <input type="submit" value="Add Post">
+    </form>
+
+    @foreach (var post in Model)
+    {
+        <div class="row">
+            <div class="leftcolumn">
+                <div class="card">
+                    <h2>@post.Title</h2>
+                    <h5>@post.Description</h5>
+                    <img src="@post.Url" alt="">
+                    <div class="fakeimg" style="height:200px;"></div>
+                    <p>@post.Score</p>
+
+                </div>
+            </div>
+        </div>
+    }
+
+
+    <div class="rightcolumn">
+        <div class="card">
+            <h3>Popular Posts</h3>
+            <div class="fakeimg">Image</div><br>
+            <div class="fakeimg">Image</div><br>
+            <div class="fakeimg">Image</div>
+        </div>
+    </div>
+</body>
+
+

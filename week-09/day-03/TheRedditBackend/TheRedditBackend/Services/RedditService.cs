@@ -10,10 +10,12 @@ namespace TheRedditBackend.Services
     public class RedditService
     {
         private PostRepository postRepo;
+        private UserRepository userRepo;
 
-        public RedditService(PostRepository postRepo)
+        public RedditService(PostRepository postRepo, UserRepository userRepo)
         {
             this.postRepo = postRepo;
+            this.userRepo = userRepo;
         }
 
         public void AddPost(Post post)
@@ -34,6 +36,11 @@ namespace TheRedditBackend.Services
         public void DeletePost(Post post)
         {
             postRepo.Delete(post);
+        }
+
+        public string Login(string userName, string password)
+        {
+            return userRepo.GetUserByUserName(userName).Password == password ? "wall" : "/";
         }
     }
 }

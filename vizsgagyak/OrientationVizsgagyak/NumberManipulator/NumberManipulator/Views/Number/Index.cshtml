@@ -1,0 +1,78 @@
+﻿@model Result
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Number Manipulator</h2>
+
+<html>
+<body>
+
+    <form action="/checker" method="post">
+        First number:<br>
+        <input type="text" name="firstnumber" value="@Model.firstnumber" required>
+        <br>
+        Second number:<br>
+        <input type="text" name="secondnumber" value="@Model.secondnumber" required>
+        <br>
+        Third number:<br>
+        <input type="text" name="thirdnumber" value="@Model.thirdnumber" required>
+        <br>
+        Fourth number:<br>
+        <input type="text" name="fourthnumber" value="@Model.fourthnumber" required>
+        <br><br>
+        <input type="submit" value="Submit"><br />
+    </form>
+    @if (Model.ResultMessage != null)
+    {
+        <h3>Result:  @Model.ResultMessage </h3>
+    }
+    <br />
+    <h4>Select the Id of the numbers you want to sum!</h4>
+    <br />
+
+    <form action="/sum" method="post">
+        <select name="sumid" size="1">
+            @for (int i = 0; i < Model.Numbers.Count; i++)
+            {
+                <option>@Model.Numbers[i].Id </option>
+            }
+        </select>
+        <input type="submit" value="Sum">
+    </form>
+    <br />
+
+    <br />
+    <h4>Select the Id of the numbers you want to square!</h4>
+    <br />
+
+    <form action="/square" method="post">
+        <select name="squareid" size="1">
+            @for (int i = 0; i < Model.Numbers.Count; i++)
+            {
+                <option>@Model.Numbers[i].Id </option>
+            }
+        </select>
+        <input type="submit" value="Square">
+    </form>
+    <br />
+
+    <br />
+    <h4>Numbers in database:</h4>
+    <br />
+    @if (Model.Numbers != null)
+    {
+        @for (int i = 0; i < Model.Numbers.Count; i++)
+        {
+            <div>Id: @Model.Numbers[i].Id --- Numbers: @Model.Numbers[i].Numbers</div>
+        }
+    }
+    else
+    {
+        <p>Ures adatbazis</p>
+    }
+
+</body>
+</html>
+
+

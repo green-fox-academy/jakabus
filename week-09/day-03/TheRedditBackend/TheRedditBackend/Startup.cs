@@ -25,11 +25,12 @@ namespace TheRedditBackend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            string connection = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string connection = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=reddit;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             services.AddMvc();
             services.AddDbContext<RedditContext>(options => options.UseSqlServer(connection));
             services.AddTransient<RedditContext>();
             services.AddTransient<PostRepository>();
+            services.AddTransient<UserRepository>();
             services.AddTransient<RedditService>();
         }
 

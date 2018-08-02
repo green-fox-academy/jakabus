@@ -1,0 +1,31 @@
+﻿@model Matrix
+@{
+    ViewData["Title"] = "Index";
+}
+
+<html>
+<body>
+
+    <h2>Matrix Checker</h2>
+    <p>
+        Check if your matrix is increasing!<br />
+        Add a matrix and sit back while the evaluation happens
+    </p>
+
+    <form action="/matrix" method="post">
+        <br /><textarea name="MatrixNumbers">@Model.MatrixAsString</textarea><br />
+        <br /><input type="submit" value="Submit"> 
+    </form>
+
+    <form action="/getmatrices"><br />
+        <input type="submit" value="Edit Matrices">
+    </form>
+    
+    @if (Model != null)
+    {
+        <h3>Result: @Model.ResultMessage </h3>
+    }
+
+</body>
+</html>
+
