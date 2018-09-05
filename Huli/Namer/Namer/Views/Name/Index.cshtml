@@ -1,0 +1,67 @@
+﻿@model  List<Name>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Names</h2>
+
+<html>
+<body>
+
+    <form action="/nameit" method="post">
+        First name:<br>
+        <input type="text" name="firstname" required>
+        <br>
+        Last name:<br>
+        <input type="text" name="lastname" required>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <br />
+    <form action="/delit" method="post">
+        Id:<br>
+        <input type="number" name="id" required>
+        <br>
+
+        <input type="submit" value="Delete">
+    </form>
+    <br />
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>First name</th>
+            <th>Last name</th>
+        </tr>
+        @foreach (var name in Model)
+        {
+            <tr>
+                <td>@name.Id</td>
+                <td>@name.FirstName</td>
+                <td>@name.LastName</td>
+            </tr>
+        }
+
+    </table>
+
+
+</body>
+</html>

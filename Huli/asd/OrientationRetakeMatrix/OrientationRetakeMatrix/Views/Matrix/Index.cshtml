@@ -1,0 +1,37 @@
+﻿@model Matrices
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>3x3 Matrix</h2>
+
+<html>
+<body>
+    
+    <form action="/getmatrix" method="get">
+        
+        <input type="number" name="id" value="@Model.Id">  <input type="submit" value="Load matrix #X">
+        <br>
+        <br><br>
+
+    </form>
+
+    <h3>Change it below:</h3>
+
+    <form action="/updatematrix" method="post">
+
+        <input type="number" name="Id" hidden value="@Model.Id">
+        <input type="number" name="M1" required value="@Model.M1"> <input type="number" name="M2" required value="@Model.M2"> <input type="number" name="M3" required value="@Model.M3">
+        <input type="number" name="M4" required value="@Model.M4"> <input type="number" name="M5" required value="@Model.M5"> <input type="number" name="M6" required value="@Model.M6">
+        <input type="number" name="M7" required value="@Model.M7"> <input type="number" name="M8" required value="@Model.M8"> <input type="number" name="M9" required value="@Model.M9">
+
+        <br /><br />
+        <input type="submit" value="Save It">
+    </form>
+    <form action="/remove" method="post">
+        <input type="number" name="Id" hidden value="@Model.Id">
+        <input type="submit" value="Remove">
+    </form>
+</body>
+</html>
+
